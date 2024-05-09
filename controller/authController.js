@@ -1,10 +1,10 @@
+//authController.js
 const User = require("../model/userModel.js");
 const CryptoJS = require('crypto-js');
 const jwt = require('jsonwebtoken');
 //Controller for Register User
 exports.registerUser = async (req, res) => {
   const newUser = new User({
-    iduser: req.body.iduser,
     email: req.body.email,
     password: CryptoJS.AES.encrypt(
       req.body.password,
